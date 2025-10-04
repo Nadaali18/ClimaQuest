@@ -62,7 +62,7 @@ class _SmartInfoCardState extends State<SmartInfoCard> {
                 Expanded(
                   child: CustomText(
                     widget.title,
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -102,7 +102,7 @@ class _SmartInfoCardState extends State<SmartInfoCard> {
                   children: [
                     CustomText(
                       'Set Destination',
-                      fontSize: 16,
+                      fontSize: 13,
                       fontWeight: FontWeight.w200,
                       color: Colors.white,
                     ),
@@ -138,8 +138,22 @@ class _SmartInfoCardState extends State<SmartInfoCard> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child:CustomText(
-                        widget.details1,
+                        'Destination: ${_locationController.text}',
                         fontSize: 16,
+                        color: Colors.white,
+                      ),
+                ),   
+                SizedBox(height: 10),
+                Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.purple.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child:CustomText(
+                        widget.details1,
+                        fontSize: 13,
                         color: Colors.white,
                       ),
                 ),   
@@ -153,7 +167,7 @@ class _SmartInfoCardState extends State<SmartInfoCard> {
                   ),
                   child: CustomText(
                         widget.details2,
-                        fontSize: 16,
+                        fontSize: 13,
                         color: Colors.white,
                       ),
                 ),

@@ -44,12 +44,14 @@ class _InfoCardState extends State<InfoCard> {
                     ),
                   ),
                 SizedBox(width: 8),
-                CustomText(
-                  widget.title,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                Expanded(
+                  child: CustomText(
+                    widget.title,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                  ),
                 ),
-                Spacer(),
+                SizedBox(width: 12),
                 ElevatedButton(
                 style: ElevatedButton.styleFrom(
                  backgroundColor: const Color.fromARGB(255, 246, 71, 176),
@@ -81,7 +83,7 @@ class _InfoCardState extends State<InfoCard> {
             ),
             child: CustomText(
               widget.details,
-                fontSize: 14,
+                fontSize: 13,
                 color: Colors.white,
             ),
           ),
