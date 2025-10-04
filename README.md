@@ -58,7 +58,7 @@
 To run this project locally:
 
 ```bash
-git clone https://github.com/your-username/climaquest.git
+git clone https://github.com/Nadaali18/ClimaQuest.git
 cd climaquest
 flutter pub get
 flutter run
