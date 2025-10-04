@@ -4,7 +4,7 @@
 
 ## Demo
 
-<video src="https://github.com/your-username/climaquest/assets/your-video-file.mp4" controls width="600"></video>
+<video src="https://github.com/Nadaali18/ClimaQuest/blob/main/Demo.mp4" controls width="600"></video>
 
 ## Features
 
