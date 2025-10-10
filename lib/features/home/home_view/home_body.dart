@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/routes/routes.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
 import 'package:clima_quest/features/home/widgets/animated_border_botton.dart';
@@ -19,11 +20,11 @@ class HomeBody extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: IconButton(
             onPressed: () => context.go(Routes.search),
-            icon: const Icon(Icons.search, color: Colors.white),
+            icon: const Icon(Icons.search, color: AppColors.wh),
           ),
         ),
         const SizedBox(height: 50),
-        CustomText('Korea',fontSize: 35,fontWeight: FontWeight.bold,color: Colors.white,),
+        CustomText('Korea',fontSize: 35,fontWeight: FontWeight.bold,color: AppColors.wh,),
         SizedBox(height: 30,),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
@@ -53,14 +54,7 @@ class HomeBody extends StatelessWidget {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      gradient: const LinearGradient(
-                        colors: [
-                          Color.fromARGB(255, 63, 1, 72), 
-                          Colors.transparent, 
-                        ],
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter,
-                      ),
+                      gradient: AppColors.homeGradient,
                     ),
                     padding: const EdgeInsets.all(6),
                     child: TextColumn(degree: '19°',state: 'Snow', time: '9:14 am'),

@@ -28,7 +28,7 @@ class SevenDayContainer extends StatelessWidget {
             '$temperature°',
               fontSize: 16,
               fontWeight: FontWeight.w500,
-              color: Colors.white,
+              color: AppColors.wh,
           ),
           SizedBox(
             width: 50,
@@ -42,7 +42,7 @@ class SevenDayContainer extends StatelessWidget {
             day,
               fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: AppColors.wh,
           ),
         ],
       ),

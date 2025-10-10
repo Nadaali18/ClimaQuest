@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/widgets/custom_container_shadow.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
@@ -25,30 +26,30 @@ class _PassTextFieldState extends State<PassTextField> {
               widget.title,
               fontSize: 18,
               fontWeight: FontWeight.w600,
-              color: Colors.white,
+              color: AppColors.wh,
             ),
             SizedBox(height: 6,),
           CustomContainerShadow(
             height: 45,
             child: TextFormField(
-              cursorColor: Colors.black,
+              cursorColor: AppColors.bl,
               obscureText: obscureText,
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
-                color: Colors.black,
+                color: AppColors.bl,
               ),
               decoration: InputDecoration(
                 hintText: widget.hint,
                 hintStyle: TextStyle(
-                  color: Colors.grey[700],
+                  color: AppColors.hintColor,
                   fontSize: 14,
                 ),
-                prefixIcon: Icon(Icons.lock_outline, color: Colors.grey[700]),
+                prefixIcon: Icon(Icons.lock_outline, color: AppColors.hintColor),
                 suffixIcon: IconButton(
                   icon: Icon(
                     obscureText ? Icons.visibility_off : Icons.visibility,
-                    color: Colors.grey[700],
+                    color: AppColors.hintColor,
                   ),
                   onPressed: () {
                     setState(() {

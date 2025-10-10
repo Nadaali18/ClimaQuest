@@ -24,12 +24,12 @@ class AnimatedBorderButton extends StatefulWidget {
 
 class _AnimatedBorderButtonState extends State<AnimatedBorderButton>
     with SingleTickerProviderStateMixin {
-  late final AnimationController _controller;
+  late final AnimationController controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
+    controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 3),
     )..repeat();
@@ -37,7 +37,7 @@ class _AnimatedBorderButtonState extends State<AnimatedBorderButton>
 
   @override
   void dispose() {
-    _controller.dispose();
+    controller.dispose();
     super.dispose();
   }
 
@@ -46,7 +46,7 @@ class _AnimatedBorderButtonState extends State<AnimatedBorderButton>
     final stroke = widget.strokeWidth;
     return CustomPaint(
       foregroundPainter: _AnimatedBorderPainter(
-        animation: _controller,
+        animation: controller,
         borderRadius: widget.borderRadius, 
         strokeWidth: stroke,
       ),
@@ -77,7 +77,7 @@ class _AnimatedBorderPainter extends CustomPainter {
 
   _AnimatedBorderPainter({
     required this.animation,
-    required this.borderRadius, // مش ثابت بقى
+    required this.borderRadius,
     this.strokeWidth = 3,
   }) : super(repaint: animation);
 
@@ -91,7 +91,7 @@ class _AnimatedBorderPainter extends CustomPainter {
     );
 
     final shader = SweepGradient(
-      colors: [Colors.white, const Color.fromARGB(255, 127, 32, 144), Colors.white],
+      colors: [AppColors.wh, const Color.fromARGB(255, 127, 32, 144), AppColors.wh],
       stops: [0.0, 0.5, 1.0],
       transform: GradientRotation(animation.value * 2 * pi),
     ).createShader(rect);

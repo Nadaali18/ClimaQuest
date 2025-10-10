@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/widgets/custom_container_2.dart';
 import 'package:clima_quest/features/home/home_view/home_body.dart';
 import 'package:flutter/material.dart';
 
@@ -9,14 +10,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       body:Stack(
         children:[ 
-          Positioned.fill(
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/images/background4.jpg"),
-                fit: BoxFit.fill)
-              ),
-            ),
-          ), 
+          CustomContainer2(),
           HomeBody(),])
     );
   }

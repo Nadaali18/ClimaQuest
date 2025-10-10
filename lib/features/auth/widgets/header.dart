@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ final String text;
             text,
             fontSize: 32,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: AppColors.wh,
             ),
         ],
       ),

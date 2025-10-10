@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
@@ -17,9 +18,9 @@ final String time;
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              CustomText(state, fontSize: 15,fontWeight: FontWeight.w500,color: Colors.white70),
-              CustomText(degree,fontSize: 30,fontWeight: FontWeight.bold,color: Colors.white,),
-              CustomText(time, fontSize: 15,fontWeight: FontWeight.w500,color: Colors.white70),
+              CustomText(state, fontSize: 15,fontWeight: FontWeight.w500,color: AppColors.hintColor),
+              CustomText(degree,fontSize: 30,fontWeight: FontWeight.bold,color: AppColors.wh,),
+              CustomText(time, fontSize: 15,fontWeight: FontWeight.w500,color: AppColors.hintColor),
             ],
           
           ),

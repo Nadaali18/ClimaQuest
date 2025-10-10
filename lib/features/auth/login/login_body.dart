@@ -1,7 +1,9 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/routes/routes.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
 import 'package:clima_quest/core/widgets/gradient_button.dart';
 import 'package:clima_quest/features/auth/widgets/bottom_row.dart';
+import 'package:clima_quest/features/auth/widgets/custom_info_container.dart';
 import 'package:clima_quest/features/auth/widgets/header.dart';
 import 'package:clima_quest/features/auth/widgets/pass_text_field.dart';
 import 'package:clima_quest/features/auth/widgets/remember_row.dart';
@@ -20,18 +22,7 @@ class LoginBody extends StatelessWidget {
       child: ListView(
         children:[
           Header(text: 'Welcome Back!'),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Container(
-              height: 450,
-              decoration: BoxDecoration(
-                color: Colors.black.withValues(alpha: 0.2), 
-              borderRadius: BorderRadius.circular(40),
-              border: Border.all(
-                  color: Colors.white.withValues(alpha: 0.4),
-                  width: 1.5,
-                ),
-             ),
+              CustomInfoContainer(
               child: SingleChildScrollView(
                 child: Column(
                   children: [
@@ -40,7 +31,7 @@ class LoginBody extends StatelessWidget {
                     'Login',
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: AppColors.wh,
                   ),
                     SizedBox(height:20),
                     CustomTextField(title: "Email",hint: 'Enter Your Email', icon: Icons.email_outlined),
@@ -53,7 +44,6 @@ class LoginBody extends StatelessWidget {
                 ),
               ),
             ),
-          ),
         ],
       ),
     );

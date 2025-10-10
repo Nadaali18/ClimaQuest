@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class _RememberRowState extends State<RememberRow> {
             value = tap;
           });}),
           SizedBox(width: 4,),
-          CustomText('Remember me',color: Colors.white,),
+          CustomText('Remember me',color: AppColors.wh,),
         ],
       ),
     );

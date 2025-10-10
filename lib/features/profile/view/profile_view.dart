@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/widgets/custom_container_2.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
 import 'package:clima_quest/features/profile/view/profile_body.dart';
 import 'package:flutter/material.dart';
@@ -15,14 +16,8 @@ class ProfileView extends StatelessWidget {
       ),
       body: Stack(
         children:[ 
-          Positioned.fill(
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/images/background4.jpg"),
-                fit: BoxFit.fill)
-              ),
-            ),
-          ), ProfileBody(),])
+          CustomContainer2(),
+          ProfileBody(),])
     );
   }
 }

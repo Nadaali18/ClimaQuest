@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:flutter/material.dart';
 
 class Dot extends StatelessWidget {
@@ -12,9 +13,9 @@ class Dot extends StatelessWidget {
       height: 10,
       width: 10,
       decoration: BoxDecoration(
-        color: currentPage == index ? Colors.white : Colors.black,
+        color: currentPage == index ? AppColors.wh : AppColors.bl,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.white,width: 2),
+        border: Border.all(color: AppColors.bl,width: 2),
       ),
     );
   }

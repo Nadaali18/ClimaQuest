@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/widgets/custom_container_2.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:clima_quest/core/routes/routes.dart';
@@ -16,14 +17,7 @@ class SearchView extends StatelessWidget {
       ),
       body: Stack(
         children:[ 
-          Positioned.fill(
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/images/background4.jpg"),
-                fit: BoxFit.fill)
-              ),
-            ),
-          ), 
+          CustomContainer2(),
           SearchBody()]),
     );
   }

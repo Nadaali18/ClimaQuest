@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class InfoCard extends StatefulWidget {
 }
 
 class _InfoCardState extends State<InfoCard> {
-  bool _isExpanded = false;
+  bool isExpanded = false;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -54,26 +55,26 @@ class _InfoCardState extends State<InfoCard> {
                 SizedBox(width: 12),
                 ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                 backgroundColor: const Color.fromARGB(255, 246, 71, 176),
+                 backgroundColor: AppColors.buttonColor,
                   shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
                ),
                 onPressed: () {
                   setState(() {
-                    _isExpanded = !_isExpanded;
+                    isExpanded = !isExpanded;
                   });
                 },
                 child: CustomText(
-                  _isExpanded ? 'Hide Details' : 'See Details',
-                    color: Colors.white,
+                  isExpanded ? 'Hide Details' : 'See Details',
+                    color: AppColors.wh,
                     fontWeight: FontWeight.bold,
                 ),
               ),
               ],
             ),
             SizedBox(height: 10),
-            if (_isExpanded)
+            if (isExpanded)
           Container(
             width: double.infinity,
             padding: EdgeInsets.all(12),
@@ -84,7 +85,7 @@ class _InfoCardState extends State<InfoCard> {
             child: CustomText(
               widget.details,
                 fontSize: 13,
-                color: Colors.white,
+                color: AppColors.wh,
             ),
           ),
           ],

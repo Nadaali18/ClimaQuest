@@ -24,33 +24,32 @@ class _ProfileBodyState extends State<ProfileBody> {
   String favWeather = "Sunny";
 
   bool isEditing = false;
-  TextEditingController _usernameController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _addressController = TextEditingController();
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    _usernameController.text = username;
-    _emailController.text = email;
-    _addressController.text = address;
+    usernameController.text = username;
+    emailController.text = email;
+    addressController.text = address;
   }
 
-  void _toggleEdit() {
+  void toggleEdit() {
     setState(() {
       isEditing = !isEditing;
       if (!isEditing) {
-        // حفظ التغييرات عند الخروج من وضع التعديل
-        _saveChanges();
+        saveChanges();
       }
     });
   }
 
-  void _saveChanges() {
+  void saveChanges() {
     setState(() {
-      username = _usernameController.text;
-      email = _emailController.text;
-      address = _addressController.text;
+      username = usernameController.text;
+      email = emailController.text;
+      address = addressController.text;
     });
     
   }
@@ -70,7 +69,6 @@ class _ProfileBodyState extends State<ProfileBody> {
               },
             ),
             const SizedBox(height: 20),
-            
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -79,11 +77,11 @@ class _ProfileBodyState extends State<ProfileBody> {
                     isEditing ? Icons.close : Icons.edit,
                     color: Colors.purple,
                   ),
-                  onPressed: _toggleEdit,
+                  onPressed: toggleEdit,
                 ),
                 CustomText(
                   isEditing ? "Cancel Edit" : "Edit Profile",
-                  color: Colors.white,
+                  color: AppColors.wh,
                 ),
               ],
             ),
@@ -93,22 +91,22 @@ class _ProfileBodyState extends State<ProfileBody> {
               label: "Username",
               value: username,
               isEditing: isEditing,
-              controller: _usernameController,
-              onEdit: () => _toggleEdit(),
+              controller: usernameController,
+              onEdit: () => toggleEdit(),
             ),
             ProfileField(
               label: "Email",
               value: email,
               isEditing: isEditing,
-              controller: _emailController,
-              onEdit: () => _toggleEdit(),
+              controller: emailController,
+              onEdit: () => toggleEdit(),
             ),
             ProfileField(
               label: "Address",
               value: address,
               isEditing: isEditing,
-              controller: _addressController,
-              onEdit: () => _toggleEdit(),
+              controller: addressController,
+              onEdit: () => toggleEdit(),
             ),
             ProfileField(
               label: "Favorite Weather",
@@ -122,14 +120,14 @@ class _ProfileBodyState extends State<ProfileBody> {
                   favWeather = value!;
                 });
               },
-              onEdit: () => _toggleEdit(),
+              onEdit: () => toggleEdit(),
             ),
             if (isEditing) ...[
               const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: GradientButton(
-                  onPressed: _toggleEdit,
+                  onPressed: toggleEdit,
                   text:  "Save Changes",
                 ),
               ),
@@ -153,9 +151,9 @@ class _ProfileBodyState extends State<ProfileBody> {
 
   @override
   void dispose() {
-    _usernameController.dispose();
-    _emailController.dispose();
-    _addressController.dispose();
+    usernameController.dispose();
+    emailController.dispose();
+    addressController.dispose();
     super.dispose();
   }
 }

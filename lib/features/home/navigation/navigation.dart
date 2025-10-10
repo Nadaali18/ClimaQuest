@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
 import 'package:clima_quest/features/games/view/games_view.dart';
 import 'package:clima_quest/features/home/home_view/home_view.dart';
@@ -40,21 +41,21 @@ class _CustomNavigationState extends State<CustomNavigation> {
            Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.games_rounded,color: Colors.white,),
+              Icon(Icons.games_rounded,color: AppColors.wh,),
               CustomText('Games'),
             ],
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.home_rounded,color: Colors.white,),
+              Icon(Icons.home_rounded,color: AppColors.wh,),
               CustomText('Home'),
             ],
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.person,color: Colors.white,),
+              Icon(Icons.person,color: AppColors.wh,),
               CustomText('Profile'),
             ],
           ),

@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/widgets/custom_container_shadow.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
@@ -23,24 +24,24 @@ class CustomTextField extends StatelessWidget {
             title,
             fontSize: 18,
             fontWeight: FontWeight.w600,
-            color: Colors.white,
+            color: AppColors.wh,
           ),
           SizedBox(height: 6,),
           CustomContainerShadow(
             height: 45,
             child: Center(
               child: TextFormField(
-                cursorColor: Colors.black,
+                cursorColor: AppColors.bl,
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
-                  color: Colors.black,
+                  color: AppColors.bl,
                 ),
                 decoration: InputDecoration(
-                  prefixIcon: Icon(icon, color: Colors.grey[700],),
+                  prefixIcon: Icon(icon, color: AppColors.hintColor,),
                   hintText: hint,
                   hintStyle: TextStyle(
-                    color: Colors.grey[700],
+                    color: AppColors.hintColor,
                     fontSize: 14,
                   ),
                   border: InputBorder.none,

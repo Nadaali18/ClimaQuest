@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
 import 'package:clima_quest/features/home/widgets/seven_day_container.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +61,7 @@ class _SevenDayForecastState extends State<SevenDayForecast> {
                 '7 Days Forecast',
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: AppColors.wh,
             ),
           ),
           SizedBox(

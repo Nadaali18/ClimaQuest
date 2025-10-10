@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:clima_quest/core/routes/routes.dart';
 import 'package:clima_quest/core/widgets/gradient_button.dart';
+import 'package:clima_quest/features/search/widgets/search_text_field.dart';
 import 'package:clima_quest/features/search/widgets/smart_date_time_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -24,24 +25,9 @@ class SearchBody extends StatelessWidget {
                     height: 250,width: 250,
                     child: Image.asset('assets/images/search.png',fit:BoxFit.fill)),
                  SizedBox(height: 50),
-                 TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Enter location',
-                          hintStyle: TextStyle(color: Colors.white70),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          filled: true,
-                          fillColor: Colors.purple.withValues(alpha: 0.2),
-                          contentPadding: EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 8,
-                          ),
-                        ),
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      SizedBox(height: 30),
-                      SmartDateTimeField(
+                 SearchTextField(),
+                 SizedBox(height: 30),
+                 SmartDateTimeField(
                        label: "Choose Date & Time",
                        onDateTimeSelected: (dateTime) {
                        log("Selected: $dateTime");

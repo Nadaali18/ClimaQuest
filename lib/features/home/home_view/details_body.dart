@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
 import 'package:clima_quest/features/home/widgets/info_card.dart';
 import 'package:clima_quest/features/home/widgets/seven_day_forecast.dart';
@@ -22,15 +23,15 @@ class DetailsBody extends StatelessWidget {
                   height: 200,width: 200,
                   child: Image.asset('assets/images/snow.png',fit:BoxFit.fill)),
                 SizedBox(height: 10,),
-                CustomText('19°',fontSize: 40,fontWeight: FontWeight.bold,color: Colors.white,),
+                CustomText('19°',fontSize: 40,fontWeight: FontWeight.bold,color: AppColors.wh,),
                 SizedBox(height: 5,),
-                CustomText('Precipitations',fontSize: 20,fontWeight: FontWeight.w200,color: Colors.white,),
+                CustomText('Precipitations',fontSize: 20,fontWeight: FontWeight.w200,color: AppColors.wh,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CustomText('Max: 24° ',fontSize: 20,fontWeight: FontWeight.w200,color: Colors.white,),
+                    CustomText('Max: 24° ',fontSize: 20,fontWeight: FontWeight.w200,color: AppColors.wh,),
                     SizedBox(width:30),
-                    CustomText('Min: 18°',fontSize: 20,fontWeight: FontWeight.w200,color: Colors.white,),
+                    CustomText('Min: 18°',fontSize: 20,fontWeight: FontWeight.w200,color: AppColors.wh,),
                   ],
                 ),
                 SizedBox(height: 15,),

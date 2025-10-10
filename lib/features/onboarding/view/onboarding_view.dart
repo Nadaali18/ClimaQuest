@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/routes/routes.dart';
 import 'package:clima_quest/features/onboarding/view/onboarding_body.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class OnboardingView extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: ()=>context.go(Routes.signUp), 
-            icon: Icon(Icons.skip_next,),color: Colors.white,),
+            icon: Icon(Icons.skip_next,),color: AppColors.wh,),
             SizedBox(width: 20,),
         ],
       ),

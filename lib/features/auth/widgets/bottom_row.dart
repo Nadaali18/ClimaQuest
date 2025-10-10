@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ final void Function()? onTap;
            SizedBox(width: 5,),
            InkWell(
             onTap: onTap,
-            child: CustomText(responsT,color: Colors.white,fontSize: 15,fontWeight: FontWeight.w600,),
+            child: CustomText(responsT,color: AppColors.wh,fontSize: 15,fontWeight: FontWeight.w600,),
            )
         ],
       ),

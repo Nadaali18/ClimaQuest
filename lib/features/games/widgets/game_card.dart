@@ -1,5 +1,6 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
-import 'package:clima_quest/features/games/widgets/web_view_page.dart';
+import 'package:clima_quest/features/games/widgets/eveleted_button.dart';
 import 'package:flutter/material.dart';
 
 class GameCard extends StatelessWidget {
@@ -18,7 +19,7 @@ final String url;
         child: Card(
           color: const Color.fromARGB(255, 140, 0, 205).withValues(alpha: 0.4),
             elevation: 4,
-            shadowColor: Colors.white,
+            shadowColor: AppColors.wh,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
@@ -39,61 +40,29 @@ final String url;
                 const SizedBox(height: 15,),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
-  children: [
-    Expanded(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomText(
-            title,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-          SizedBox(height: 4),
-          CustomText(
-            description,
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-            color: Colors.white70,
-          ),
-        ],
-      ),
-    ),
-    SizedBox(width: 12),
-    ElevatedButton(
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => WebViewPage(url: url),
-          ),
-        );
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromARGB(255, 246, 71, 176),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          CustomText(
-            'Play',
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-          SizedBox(width: 4),
-          Icon(
-            Icons.play_arrow_rounded,
-            color: Colors.white,
-            size: 16,
+                  children: [
+                   Expanded(
+                   child: Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   children: [
+                    CustomText(
+                     title,
+                     fontSize: 18,
+                     fontWeight: FontWeight.bold,
+                     color: AppColors.wh,
+                 ),
+                    SizedBox(height: 4),
+                    CustomText(
+                     description,
+                     fontSize: 14,
+                     fontWeight: FontWeight.w500,
+                     color: Colors.white70,
           ),
         ],
       ),
     ),
+                    SizedBox(width: 12),
+                    EveletedButton(url: url),
   ],
 )
               ],

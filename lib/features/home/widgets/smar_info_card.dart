@@ -1,3 +1,4 @@
+import 'package:clima_quest/core/helpers/colors.dart';
 import 'package:clima_quest/core/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
@@ -20,17 +21,16 @@ class SmartInfoCard extends StatefulWidget {
 }
 
 class _SmartInfoCardState extends State<SmartInfoCard> {
-  bool _isExpanded = false;
-  bool _isStarted = false;
-  final TextEditingController _locationController = TextEditingController();
+  bool isExpanded = false;
+  bool isStarted = false;
+  final TextEditingController locationController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    // تحديد نص الزر ديناميكياً
     String buttonText = 'See Details';
-    if (_isExpanded && _isStarted) {
+    if (isExpanded && isStarted) {
       buttonText = 'Hide Details';
-    } else if (_isExpanded && !_isStarted) {
+    } else if (isExpanded && !isStarted) {
       buttonText = 'Start';
     } else {
       buttonText = 'See Details';
@@ -69,34 +69,34 @@ class _SmartInfoCardState extends State<SmartInfoCard> {
                 SizedBox(width: 12),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 246, 71, 176),
+                    backgroundColor: AppColors.buttonColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                   onPressed: () {
                     setState(() {
-                      if (!_isExpanded) {
-                        _isExpanded = true;
-                      } else if (_isExpanded && !_isStarted) {
-                        _isStarted = true;
+                      if (!isExpanded) {
+                        isExpanded = true;
+                      } else if (isExpanded && !isStarted) {
+                        isStarted = true;
                       } else {
-                        _isExpanded = false;
-                        _isStarted = false;
+                        isExpanded = false;
+                        isStarted = false;
                       }
                     });
                   },
                   child: CustomText(
                     buttonText,
-                    color: Colors.white,
+                    color: AppColors.wh,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ],
             ),
-            if (_isExpanded) ...[
+            if (isExpanded) ...[
               SizedBox(height: 16),
-              if (!_isStarted) ...[
+              if (!isStarted) ...[
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -104,14 +104,14 @@ class _SmartInfoCardState extends State<SmartInfoCard> {
                       'Set Destination',
                       fontSize: 13,
                       fontWeight: FontWeight.w200,
-                      color: Colors.white,
+                      color: AppColors.wh,
                     ),
                     SizedBox(height: 8),
                     TextField(
-                      controller: _locationController,
+                      controller: locationController,
                       decoration: InputDecoration(
                         hintText: 'Enter location',
-                        hintStyle: TextStyle(color: Colors.white70),
+                        hintStyle: TextStyle(color: AppColors.hintColor),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -122,14 +122,14 @@ class _SmartInfoCardState extends State<SmartInfoCard> {
                           vertical: 8,
                         ),
                       ),
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: AppColors.wh),
                     ),
                   ],
                 ),
                 SizedBox(height: 16),
               ],
 
-              if (_isStarted) ...[
+              if (isStarted) ...[
                 Container(
                   width: double.infinity,
                   padding: EdgeInsets.all(16),
@@ -138,9 +138,9 @@ class _SmartInfoCardState extends State<SmartInfoCard> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child:CustomText(
-                        'Destination: ${_locationController.text}',
+                        'Destination: ${locationController.text}',
                         fontSize: 16,
-                        color: Colors.white,
+                        color: AppColors.wh,
                       ),
                 ),   
                 SizedBox(height: 10),
@@ -154,7 +154,7 @@ class _SmartInfoCardState extends State<SmartInfoCard> {
                   child:CustomText(
                         widget.details1,
                         fontSize: 13,
-                        color: Colors.white,
+                        color: AppColors.wh,
                       ),
                 ),   
                 SizedBox(height: 12),
@@ -168,7 +168,7 @@ class _SmartInfoCardState extends State<SmartInfoCard> {
                   child: CustomText(
                         widget.details2,
                         fontSize: 13,
-                        color: Colors.white,
+                        color: AppColors.wh,
                       ),
                 ),
               ],
@@ -181,7 +181,7 @@ class _SmartInfoCardState extends State<SmartInfoCard> {
 
   @override
   void dispose() {
-    _locationController.dispose();
+    locationController.dispose();
     super.dispose();
   }
 }
