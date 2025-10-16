@@ -1,13 +1,14 @@
-import 'package:clima_quest/features/auth/login/login_view.dart';
-import 'package:clima_quest/features/auth/signup/signup_view.dart';
-import 'package:clima_quest/features/games/view/games_view.dart';
-import 'package:clima_quest/features/home/home_view/details_view.dart';
-import 'package:clima_quest/features/home/home_view/home_view.dart';
-import 'package:clima_quest/features/home/navigation/navigation.dart';
-import 'package:clima_quest/features/onboarding/view/onboarding_view.dart';
-import 'package:clima_quest/features/profile/view/profile_view.dart';
-import 'package:clima_quest/features/search/view/search_view.dart';
-import 'package:clima_quest/features/splash/splash_screen_view.dart';
+
+import 'package:clima_quest/presentation/auth/login/login_view.dart';
+import 'package:clima_quest/presentation/auth/signup/signup_view.dart';
+import 'package:clima_quest/presentation/games/view/games_view.dart';
+import 'package:clima_quest/presentation/home/home_view/details_view.dart';
+import 'package:clima_quest/presentation/home/home_view/home_view.dart';
+import 'package:clima_quest/presentation/home/navigation/navigation.dart';
+import 'package:clima_quest/presentation/onboarding/view/onboarding_view.dart';
+import 'package:clima_quest/presentation/profile/view/profile_view.dart';
+import 'package:clima_quest/presentation/search/view/search_view.dart';
+import 'package:clima_quest/presentation/splash/splash_screen_view.dart';
 import 'package:go_router/go_router.dart';
 
 class Routes {
